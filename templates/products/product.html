@@ -1,0 +1,29 @@
+{% extends '../base.html' %}
+
+
+{% block content %}
+    
+    <div class="container">
+        <div class="jumbotron">
+            <div class="row">
+                
+                {% for product in products %}
+                    <div class="col-md-4">
+                        <div class="card" style="width: 20rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ product.name }}</h5>
+                                <p class="card-subtitle mb-2 text-muted"><b>Weight:</b> {{ product.weight }}</p>
+                                <p class="card-text"><b>Price:</b> {{ product.price }}</p>
+                                <p class="card-text"><b>Created at:</b> {{ product.created_at }}</p>
+                                <p class="card-text"><b>Updated at:</b> {{ product.updated_at }}</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+        
+{% endblock content %}
+    

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Home Page
+{% endblock title %}
+    
+
+{% block content %}
+    <div class="container">
+        <div class="jumbotron">
+            <div class="row">
+                
+                {% for post in posts %}
+                    <div class="col-md-4">
+                        <div class="card" style="width: 20rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Created by: {{ post.user }}</h5>
+                                <p class="card-text"><b>Created at: </b>{{ post.created_at }}</p>
+                                <p class="card-text"><b>Updated at: </b>{{ post.updated_at }}</p>
+                                <p class="card-subtitle mb-2 text-muted">{{ post.text }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                    
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+    
